@@ -3,7 +3,13 @@ if [ -z "$1" ]; then
 else
     video_file=$1
 fi
-default_ip=$(hostname -I | awk '{print $1}')
+
+if [ -z "$2" ]; then
+    default_ip=$(hostname -I | awk '{print $1}')
+else
+    default_ip=$2
+fi
+
 echo "Streaming: $video_file"
 docker load --input simple-rtsp.tar
 echo "protocols: [udp, tcp]" > rtsp-simple-server.yml
