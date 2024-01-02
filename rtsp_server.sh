@@ -1,3 +1,5 @@
+sudo apt install ffmpeg docker.io -y
+
 if [ -z "$1" ]; then
     video_file='people.mp4'
 else
