@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  rtsp_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - VIDEO_FILE=people.mp4
+    volumes:
+      - ./media:/media
+    ports:
+      - "8554:8554"
+    restart: always
