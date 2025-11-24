@@ -5,10 +5,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 1G
+        reservations:
+          cpus: '1'
+          memory: 512M # Guarantees 512MB RAM and 1 CPU core
     environment:
-      - VIDEO_FILE=people.mp4
+      - VIDEO_FILE=test_video_movie.mp4
     volumes:
       - ./media:/media
     ports:
       - "8554:8554"
-    restart: always
