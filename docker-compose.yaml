@@ -14,7 +14,7 @@ services:
           cpus: '1'
           memory: 512M # Guarantees 512MB RAM and 1 CPU core
     environment:
-      - VIDEO_FILE=test_video_movie.mp4
+      - VIDEO_FILE=people.mp4
     volumes:
       - ./media:/media
     ports:

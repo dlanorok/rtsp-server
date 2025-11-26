@@ -22,7 +22,7 @@ hostname -i
 DEFAULT_IP=$(hostname -i | awk '{print $1}')
 
 # Start the second process
-ffmpeg -re -stream_loop -1 -i "/media/$VIDEO_FILE" -c copy -f rtsp -rtsp_transport tcp "rtsp://$DEFAULT_IP:8554/live" &
+ffmpeg -re -stream_loop -1 -i "/media/$VIDEO_FILE" -c copy -f rtsp -rtsp_transport tcp "rtsp://$DEFAULT_IP:8554/video1" &
 
 
 # Mantener el script en ejecución para mantener el contenedor en funcionamiento
